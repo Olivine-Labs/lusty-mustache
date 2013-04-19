@@ -35,7 +35,7 @@ return {
     lustache.renderer.partial_cache = partials
     local content = template(context.output)
 
-    context.response.send(content)
+    context.output = content
   end,
 
   options = {
