@@ -21,6 +21,6 @@ dependencies = {
 build = {
   type = "builtin",
   modules = {
-    ["lusty-mustache.output.mustache"]  = "src/context/mustache.lua",
+    ["lusty-mustache.render.mustache"]  = "src/render/mustache.lua",
   }
 }
