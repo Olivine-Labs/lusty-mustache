@@ -26,9 +26,11 @@ return {
     context.response.headers["content-type"] = "text/html"
 
     local partials = {}
-    local template = getFile(context.template.name..'.mustache', cache)
+    local partialNames = context.template.partials or config.partials or {}
+    local templateName = context.template.name or config.template or ''
+    local template = getFile(templateName..'.mustache', cache)
 
-    for i,v in pairs(config.partials) do
+    for i,v in pairs(partialNames) do
       partials[i] = getFile(v..'.mustache', cache)
     end
 
@@ -40,7 +42,12 @@ return {
 
   options = {
     predicate = function(context)
-      return context.template.type == "mustache"
+      local accept = context.request.headers.accept or "text/html"
+      local content = context.request.headers["content-type"]
+
+      return ((accept and (accept:find("text/html") or accept:find("*/*"))) or
+             (content and content:find("text/html"))) and
+             context.template.type == "mustache"
     end
   }
 }
