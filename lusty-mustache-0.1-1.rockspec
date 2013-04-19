@@ -1,8 +1,8 @@
 package = "lusty-mustache"
-version = "0.1-0"
+version = "0.1-1"
 source = {
-  url = "https://github.com/Olivine-Labs/lusty-mustache/v0.1.tar.gz",
-  dir = "lusty-mustache"
+  url = "https://github.com/Olivine-Labs/lusty-mustache/archive/v0.1.tar.gz",
+  dir = "lusty-mustache-0.1"
 }
 description = {
   summary = "mustache template rendering for lusty.",
