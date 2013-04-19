@@ -26,10 +26,10 @@ return {
     context.response.headers["content-type"] = "text/html"
 
     local partials = {}
-    local template = getFile(context.template.name..'mustache', cache)
+    local template = getFile(context.template.name..'.mustache', cache)
 
     for i,v in pairs(config.partials) do
-      partials[i] = getFile(v..'mustache', cache)
+      partials[i] = getFile(v..'.mustache', cache)
     end
 
     lustache.renderer.partial_cache = partials
@@ -40,11 +40,7 @@ return {
 
   options = {
     predicate = function(context)
-      local accept = context.request.headers.accept or "text/html"
-      local content = context.request.headers["content-type"]
-
-      return (accept and (accept:find("text/html") or accept:find("*/*"))) or
-             (content and content:find("text/html"))
+      return context.template.type == "mustache"
     end
   }
 }
