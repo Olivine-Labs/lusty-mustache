@@ -47,7 +47,7 @@ return {
 
       return ((accept and (accept:find("text/html") or accept:find("*/*"))) or
              (content and content:find("text/html"))) and
-             context.template.type == "mustache"
+             context.template and context.template.type == "mustache"
     end
   }
 }
