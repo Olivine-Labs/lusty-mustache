@@ -1,7 +1,11 @@
 local lustache = require "lustache"
+local lfs = require "lfs"
 local cache = {}
 
 local readAll = function(file)
+  if config.base then
+    lfs.chdir(config.base)
+  end
   local f = io.open(file, "rb")
   content = f:read("*all")
   f:close()
