@@ -17,7 +17,6 @@ dependencies = {
   "lusty >= 0.2-0",
   "busted >= 1.7-1",
   "lustache >= 1.3-1",
-  "luafilesystem >= 1.5.0"
 }
 build = {
   type = "builtin",
