@@ -1,8 +1,8 @@
 package = "lusty-mustache"
-version = "0.3-0"
+version = "0.4-0"
 source = {
-  url = "https://github.com/Olivine-Labs/lusty-mustache/archive/v0.3.tar.gz",
-  dir = "lusty-mustache-0.3"
+  url = "https://github.com/Olivine-Labs/lusty-mustache/archive/v0.4.tar.gz",
+  dir = "lusty-mustache-0.4"
 }
 description = {
   summary = "mustache template rendering for lusty.",
@@ -21,6 +21,6 @@ dependencies = {
 build = {
   type = "builtin",
   modules = {
-    ["lusty-mustache.render.mustache"]  = "src/render/mustache.lua",
+    ["lusty-mustache.render.mustache"]  = "lusty-mustache/render/mustache.lua",
   }
 }
